@@ -29,3 +29,4 @@ def test_couple_premier():
     assert couple_premier(20) == [(3, 5), (5, 7), (11, 13), (17, 19)]
     assert couple_premier(50) == [(3, 5), (5, 7), (11, 13), (17, 19), (29, 31), (41, 43)]
     assert couple_premier(100) == [(3, 5), (5, 7), (11, 13), (17, 19), (29, 31), (41, 43), (59, 61), (71, 73)]
+
