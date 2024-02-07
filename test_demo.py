@@ -1,4 +1,4 @@
-from demo import test1, est_premier, couple_premier
+from demo import test1, est_premier, couple_premier, get_hexa
 
 def test_test1():
     assert test1() == None
@@ -30,3 +30,8 @@ def test_couple_premier():
     assert couple_premier(50) == [(3, 5), (5, 7), (11, 13), (17, 19), (29, 31), (41, 43)]
     assert couple_premier(100) == [(3, 5), (5, 7), (11, 13), (17, 19), (29, 31), (41, 43), (59, 61), (71, 73)]
 
+def test_get_hexa():
+    assert get_hexa("a") == '61'
+    assert get_hexa("b") == '62'
+    assert get_hexa("abe") == '616265'
+    assert get_hexa("abc") == '616263'
