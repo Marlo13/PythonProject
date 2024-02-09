@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+.form_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+.in_form{
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-align: center;
+}
+    </style>
+
+<div class="form_text">
+    <form action="/post_form" method="post">
+        <div class="in_form">
+            <h3>Form</h3>
+            <h5> Enter text:</h5>
+            <textarea name="textarea1" id="txt1" cols="40" rows="20" style="border-radius: 5px;"></textarea>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+</body>
+</html>
