@@ -7,25 +7,7 @@
 </head>
 <body>
     <style>
-.form_text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f1f1f1;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-}
-.in_form{
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    text-align: center;
-}
+
     </style>
 
 <div class="form_text">
@@ -36,7 +18,13 @@
             <textarea name="textarea1" id="txt1" cols="40" rows="20" style="border-radius: 5px;"></textarea>
             <input type="submit" value="Submit">
         </div>
+        <h1>Se connecter</h1>
     </form>
 </div>
+<form action="/post_form" method="post">
+    <input type="text" name="username" placeholder="Nom d'utilisateur">
+    <input type="password" name="password" placeholder="Mot de passe">
+    <input type="submit" value="Se connecter">
+</form>
 </body>
 </html>

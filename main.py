@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Form, Request
+from fastapi import FastAPI, Form, Request, Depends, HTTPException
 from fastapi.staticfiles import StaticFiles
 from jinja2 import Template
 import uvicorn
@@ -6,7 +6,10 @@ from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
 from fastapi.responses import HTMLResponse
 import json
-
+from pydantic import BaseModel
+class LoginForm(BaseModel):
+    username: str
+    password: str
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -20,6 +23,7 @@ def read_root():
 
 @app.get("/template1", response_class=HTMLResponse)
 async def read_template1(request: Request):
+
     return templates.TemplateResponse(
         request=request, name="template1.html")
 
@@ -35,12 +39,21 @@ def count_occurence(list1):
 
 
 @app.post("/post_form")
-async def post_form(request: Request):
-    form_data = await request.form()
-    result = count_occurence(form_data["textarea1"])
+async def post_form(request: Request, form_data: LoginForm = Depends()):
+        print(form_data)
+        # if form_data["username"] == "admin" and form_data["password"] == "admin":
+        #     return {"Message": "Connexion réussie"}
+        # else:
+        #     return {"Message": "Nom d'utilisateur ou mot de passe incorrect"}z
+    
 
-    return {"Message": result}
 
+# @app.get("/user_connection")
+# async def user_connection(request: Request, form_data: LoginForm = Depends()):
+#     if form_data["username"] == "admin" and form_data["password"] == "admin":
+#         return {"Message": "Connexion réussie"}
+#     else:
+#         return {"Message": "Nom d'utilisateur ou mot de passe incorrect"}
 
 
 
