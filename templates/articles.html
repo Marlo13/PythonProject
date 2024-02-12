@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- affichage des articles button modifier et supprimer  -->
+    <h1>Blog Personnel</h1>
+    <h2>Articles</h2>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.content }}</p>
+                <a href="/edit_article/{{ article.id }}">Modifier</a>
+                <a href="/delete_article/{{ article.id }}">Supprimer</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/logout">Déconnexion</a>
+    <a href="/profile">Profil</a>
+    <a href="/articles">Articles</a>
+    <a href="/create_article">Créer un article</a>
+    <a href="/login">Connexion</a>
+    <a href="/register">Inscription</a>
+    <a href="/blog">Blog</a>
+    <a href="/admin">Admin</a>
+
+</body>
+</html>

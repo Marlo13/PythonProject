@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john@doe.fr",
+        "password": "pass"
+    },
+    {
+        "id": 2,
+        "name": "Jane Doe",
+        "email": "jane@doe.fr",
+        "password": "pass"
+    },
+    {
+        "id": 3,
+        "name": "Gabriel-Alexis Huin",
+        "email": "deutsche@qualitat.de",
+        "password": "Hword"
+    },
+    {
+        "id": 4,
+        "email": "h@h.f",
+        "password": "aze",
+        "name": "aze"
+    }
+]
