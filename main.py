@@ -80,6 +80,7 @@ async def register(request: Request ,name: Annotated[str, Form()], email: Annota
     for user in list_users:
         if user["email"] == utilisateur["email"]:
             raise HTTPException(status_code=400, detail="Cet utilisateur existe déjà")
+    #ajoute l'utilisateur dans la liste
     list_users.append(utilisateur)
     # Ajouter l'utilisateur dans le fichier JSON
     with open("users.json", mode="w", encoding="utf-8") as file:
