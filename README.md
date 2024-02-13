@@ -6,5 +6,5 @@ CCI@Blois2024!
 # docker
 ```bash 
 docker build -t pythonp . 
-docker run -p 3000:5000 pythonp
+docker run -p 5000:3000 pythonp
 ```
