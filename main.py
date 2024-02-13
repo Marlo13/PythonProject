@@ -122,12 +122,12 @@ async def create_article(title: Annotated[str, Form()], content: Annotated[str, 
 # editer un article
 @app.get("/edit_article/{article_id}", response_class=HTMLResponse)
 async def edit_article(request: Request, article_id: int):
-    article = list_articles[article_id]
+    article = list_articles[article_id + 1]
     return templates.TemplateResponse("edit_article.html", {"request": request, "article": article, "article_id": article_id})
 
 @app.post("/edit_article/{article_id}")
 async def edit_article(request: Request, article_id: int, title: Annotated[str, Form()], content: Annotated[str, Form()]):
-    list_articles[article_id] = { "id": article_id,"title": title, "content": content}
+    list_articles[article_id + 1] = { "id": article_id,"title": title, "content": content}
     # Ajouter l'article dans le fichier JSON
     with open("articles.json", mode="w", encoding="utf-8") as file:
         json.dump(list_articles, file, indent=4)
@@ -136,7 +136,7 @@ async def edit_article(request: Request, article_id: int, title: Annotated[str, 
 # Route pour supprimer un article
 @app.get("/delete_article/{article_id}")
 async def delete_article(article_id: int):
-    list_articles.pop(article_id)
+    list_articles.pop(article_id + 1)
     # Ajouter l'article dans le fichier JSON
     with open("articles.json", mode="w", encoding="utf-8") as file:
         json.dump(list_articles, file, indent=4)
