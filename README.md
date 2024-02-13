@@ -6,5 +6,5 @@ CCI@Blois2024! <!-- password -->
 # docker
 ```bash
 docker build -t pythonp . # build the image
-docker run -d -p 5000:3000 pythonp # run the image
+docker run -d -p 10000:3000 --name pythonp --restart always -e pythonp
 ```
