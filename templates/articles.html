@@ -6,27 +6,25 @@
     <title>Document</title>
 </head>
 <body>
+    <navbar>
+    <a href="/create_article">Créer un article</a>
+    <a href="/profile">Profil</a>
+    <a href="/logout">Déconnexion</a>
+    </navbar>
+
+
 <!-- affichage des articles button modifier et supprimer  -->
     <h1>Blog Personnel</h1>
     <h2>Articles</h2>
     <ul>
-        {% for article in articles %}
+        {% for article in list_articles %}
             <li>
-                <h3>{{ article.title }}</h3>
-                <p>{{ article.content }}</p>
-                <a href="/edit_article/{{ article.id }}">Modifier</a>
+                <h2>{{ article.title }}</h2>
+                <h4>{{ article.content }}</h4>
+                <a href="/edit_article/{{ article.id }}" method="post">Modifier</a>
                 <a href="/delete_article/{{ article.id }}">Supprimer</a>
             </li>
         {% endfor %}
     </ul>
-    <a href="/logout">Déconnexion</a>
-    <a href="/profile">Profil</a>
-    <a href="/articles">Articles</a>
-    <a href="/create_article">Créer un article</a>
-    <a href="/login">Connexion</a>
-    <a href="/register">Inscription</a>
-    <a href="/blog">Blog</a>
-    <a href="/admin">Admin</a>
-
 </body>
 </html>

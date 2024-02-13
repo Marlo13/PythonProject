@@ -2,16 +2,15 @@
     {
         "id": 1,
         "title": "fastapi",
-        "content": "python3"
+        "content": "python3 est un framework web , lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         "id": 2,
-        "title": "flask",
-        "content": "python3"
+        "title": "fastapi hugo",
+        "content": "python3 est un framework web , lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
-        "id": 3,
-        "title": "django",
-        "content": "python3"
+        "title": "Hugo",
+        "content": "Sp\u00e9cimen en concepteur d\u00e9veloppeur d'application au CCI campus centre tr\u00e8s fort en code mais pr\u00e9f\u00e8re dormir la plus part du temps ses Hobbits sont t\u00e9tris ,clash royal et tout l univers nintendo"
     }
 ]

@@ -4,12 +4,14 @@ from jinja2 import Template
 import uvicorn
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
 import json
 from pprint import pprint
 from typing import Annotated
 from pydantic import BaseModel
 import os
+
+
 class LoginForm(BaseModel):
     username: str
     password: str
@@ -115,7 +117,7 @@ async def create_article(title: Annotated[str, Form()], content: Annotated[str, 
     # Ajouter l'article dans le fichier JSON
     with open("articles.json", mode="w", encoding="utf-8") as file:
         json.dump(list_articles, file, indent=4)
-    return {"message": "Article créé avec succès"}
+    return RedirectResponse("/articles", status_code=303)
 
 # editer un article
 @app.get("/edit_article/{article_id}", response_class=HTMLResponse)
@@ -125,11 +127,20 @@ async def edit_article(request: Request, article_id: int):
 
 @app.post("/edit_article/{article_id}")
 async def edit_article(request: Request, article_id: int, title: Annotated[str, Form()], content: Annotated[str, Form()]):
-    list_articles[article_id] = {"title": title, "content": content}
+    list_articles[article_id] = { "id": article_id,"title": title, "content": content}
     # Ajouter l'article dans le fichier JSON
     with open("articles.json", mode="w", encoding="utf-8") as file:
         json.dump(list_articles, file, indent=4)
-    return {"message": "Article modifié avec succès"}
+    return RedirectResponse("/articles", status_code=303)
+
+# Route pour supprimer un article
+@app.get("/delete_article/{article_id}")
+async def delete_article(article_id: int):
+    list_articles.pop(article_id)
+    # Ajouter l'article dans le fichier JSON
+    with open("articles.json", mode="w", encoding="utf-8") as file:
+        json.dump(list_articles, file, indent=4)
+    return RedirectResponse("/articles", status_code=303)
 
 
 if __name__ == "__main__":
