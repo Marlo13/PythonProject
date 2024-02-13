@@ -74,9 +74,9 @@ async def register(request: Request):
     return templates.TemplateResponse("register.html", {"request": request})
 
 @app.post("/register")
-async def register(request: Request , email: Annotated[str, Form()], password: Annotated[str, Form()], name: Annotated[str, Form()]):
+async def register(request: Request ,name: Annotated[str, Form()], email: Annotated[str, Form()], password: Annotated[str, Form()]):
     # vérifie dans le fichier json users.json si l'utilisateur existe
-    utilisateur = {"email": email,"password": password,"name": name}
+    utilisateur = {"name": name,"email": email,"password": password}
     for user in list_users:
         if user["email"] == utilisateur["email"]:
             raise HTTPException(status_code=400, detail="Cet utilisateur existe déjà")
